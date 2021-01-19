@@ -76,6 +76,11 @@ crontab -e
 ./certbot-auto renew  --manual --preferred-challenges dns  --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh --deploy-hook "/usr/bin/systemctl restart nginx" --dry-run
 ```
 
+```bash
+./certbot-auto renew  --manual --preferred-challenges dns  --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh --deploy-hook "/usr/bin/systemctl restart openresty" --no-self-upgrade --dry-run
+```
+
+
 ### 强制更新
 ```bash
 ./certbot-auto renew  --manual --preferred-challenges dns  --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh --deploy-hook "/usr/bin/systemctl restart nginx" --force-renewal
