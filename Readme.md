@@ -10,7 +10,6 @@
 cd certbot-auth-alidns
 ./init.sh
 ```
-
 # 配置阿里云 accessKeyId 和 accessSecret
 修改 `config.py` 里面对应的值（阿里云控制台中生成的，一定要是拥有这个域名的阿里云）
 ```python
@@ -34,9 +33,18 @@ ACCESS_KEY_SECRET = 'your accessSecret'
 
 ```
 
+```bash
+./certbot-auto certonly -d "numas.ltd" -d "*.numas.ltd" --email huaxing_zheng@qq.com --manual --preferred-challenges dns   --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh --server https://acme-v02.api.letsencrypt.org/directory --no-self-upgrade --dry-run
+```
+
+
 ### 实际申请
 ```bash
 ./certbot-auto certonly -d *.iot-c.top --manual --preferred-challenges dns  --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh
+```
+
+```bash
+./certbot-auto certonly -d "numas.ltd" -d "*.numas.ltd" --email huaxing_zheng@qq.com --manual --preferred-challenges dns   --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh --server https://acme-v02.api.letsencrypt.org/directory --no-self-upgrade
 ```
 
 # 自动更新

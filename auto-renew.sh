@@ -17,7 +17,9 @@ echo ------------------
 pwd
 date
 # 自动续期更新所有证书，离过期时间太远就不会去续期，一般离过期时间 还有一个月内 就会续期
-./certbot-auto renew  --manual --preferred-challenges dns --manual-auth-hook ${path}/auth.sh --deploy-hook "/usr/bin/systemctl restart nginx"
+./certbot-auto renew  --manual --preferred-challenges dns --manual-auth-hook ${path}/auth.sh --deploy-hook "/usr/bin/systemctl restart openresty" --no-self-upgrade
+
+# ./certbot-auto renew  --manual --preferred-challenges dns --manual-auth-hook ${path}/auth.sh --deploy-hook "/usr/bin/systemctl restart nginx"
 
 
 # 测试更新,
