@@ -48,7 +48,7 @@ crontab -e
 ```
 里面添加一行：
 ```cron
-0 2 * * * /opt/svr/certbot-auth-alidns/auto-renew.sh
+0 2 * * 0 /opt/svr/certbot-auth-alidns/auto-renew.sh
 ```
 
 
